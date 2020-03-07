@@ -25,10 +25,10 @@ class Application
       end
 
     elsif req.path.match(/add/)
-      item_to_add = req.params["item"]
-      if @@items.include? item_to_add
-        @@cart << item_to_add
-        resp.write "#{item_to_add} has been added to your cart"
+      item = req.params["item"]
+      if @@items.include? item
+        @@cart << item
+        resp.write "added #{item}"
 
       else
         resp.write "We couldn't find #{item}"
