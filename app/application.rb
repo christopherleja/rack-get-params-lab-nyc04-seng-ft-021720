@@ -22,7 +22,7 @@ class Application
         resp.write "Your cart is empty"
       end
     elsif req.path.match(/add/)
-      item = req.params("q")
+      item = req.params("add")
       if @@items.include?(item)
         @@cart.push(item)
         resp.write "#{item} has been added to your cart"
